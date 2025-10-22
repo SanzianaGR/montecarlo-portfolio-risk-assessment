@@ -8,6 +8,7 @@ class Config:
     N_SIMULATIONS = 10000  # number of random walks
     HISTORICAL_DAYS = 252  
     
+    N_PATHS_TO_PLOT = 100  # how many paths to show 
     INITIAL_INVESTMENT = 10000  # Starting portfolio value ($)
     
     
