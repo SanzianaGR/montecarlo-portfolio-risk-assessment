@@ -14,13 +14,13 @@ class DataFetcher:
         
         for symbol in self.symbols:
             print(f"   {symbol}...", end=" ")
-            ticker = yf.Ticker(symbol)
+            ticker = yf.Ticker(symbol) # access stock data
             hist = ticker.history(period="1y")
             
             if hist.empty:
                 raise ValueError(f"No data for {symbol}")
             
-            returns = hist['Close'].pct_change().dropna()
+            returns = hist['Close'].pct_change().dropna() # If the price goes from 100 to 105, that's a 5% return. pct_change calculates this for every day
             returns_list.append(returns)
             print(f" {len(returns)} days")
         
